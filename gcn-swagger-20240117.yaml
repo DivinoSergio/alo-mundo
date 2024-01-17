@@ -1,0 +1,6315 @@
+---
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  "/tipos-planos/{id}":
+    get:
+      tags:
+      - tipo-plano-controller
+      operationId: obter
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/TipoPlanoResponse"
+    put:
+      tags:
+      - tipo-plano-controller
+      operationId: alterar
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/TipoPlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/TipoPlanoResponse"
+  "/tipos-fornecedores/{id}":
+    put:
+      tags:
+      - tipo-fornecedor-controller
+      operationId: alterar_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/TipoFornecedorRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/TipoFornecedorResponse"
+    delete:
+      tags:
+      - tipo-fornecedor-controller
+      operationId: excluir
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  "/teste/validacao/{id}":
+    put:
+      tags:
+      - validacao-plano-controller
+      operationId: alterar_2
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ValidacaoPlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ValidacaoPlanoResponse"
+  "/sistemas/{id}":
+    get:
+      tags:
+      - sistema-controller
+      operationId: obterPorId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/SistemaResponse"
+    put:
+      tags:
+      - sistema-controller
+      operationId: alterar_3
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/SistemaRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/SistemaResponse"
+  "/recursos/sistema/{id}":
+    get:
+      tags:
+      - recursos-controller
+      operationId: buscarRecursoSistemaPorId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/RecursoSistemaResponse"
+    put:
+      tags:
+      - recursos-controller
+      operationId: alterarRecursoSistema
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoSistemaRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - recursos-controller
+      operationId: excluirRecursoSistema
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoSistemaRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/recursos/infraestrutura/{id}":
+    get:
+      tags:
+      - recursos-controller
+      operationId: buscarRecursoInfraestruturaPorId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/RecursoInfraestruturaResponse"
+    put:
+      tags:
+      - recursos-controller
+      operationId: alterarRecursoInfraestrutura
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoInfraestruturaRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - recursos-controller
+      operationId: excluirRecursoInfraestrutura
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoInfraestruturaRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/recursos/humanos/{id}":
+    get:
+      tags:
+      - recursos-controller
+      operationId: buscarRecursoHumanoPorId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/RecursoHumanoResponse"
+    put:
+      tags:
+      - recursos-controller
+      operationId: alterarRecursoHumano
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoHumanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - recursos-controller
+      operationId: excluirRecursoHumano
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoHumanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/procedimentos/ordem-incidente/{id}":
+    put:
+      tags:
+      - procedimento-controller
+      operationId: alterar_4
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                "$ref": "#/components/schemas/OrdemIncidenteProcedimentoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/procedimentos/contato/{id}":
+    put:
+      tags:
+      - procedimento-controller
+      operationId: alterar_5
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IncidenteProcedimentoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/planos/{id}":
+    get:
+      tags:
+      - plano-controller
+      operationId: buscar
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PlanoResponse"
+    put:
+      tags:
+      - plano-controller
+      operationId: alterar_6
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/PlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/planos/{idPlano}/concluir":
+    put:
+      tags:
+      - plano-controller
+      operationId: alertaPlanoConcluido
+      parameters:
+      - name: idPlano
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  "/planos/teste/conclusao-teste":
+    get:
+      tags:
+      - plano-teste-controller
+      operationId: buscarConclusaoTeste
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ConclusaoFinalTesteResponse"
+    put:
+      tags:
+      - plano-teste-controller
+      operationId: concluirTeste
+      parameters:
+      - name: idConclusao
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ConclusaoFinalTesteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ConclusaoFinalTesteResponse"
+    post:
+      tags:
+      - plano-teste-controller
+      operationId: concluirTeste_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ConclusaoFinalTesteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ConclusaoFinalTesteResponse"
+  "/planos/excluir/{id}":
+    put:
+      tags:
+      - plano-controller
+      operationId: exclusaoLogicaPlanoGCN
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  "/plano/aprovacao/manual/{id}":
+    put:
+      tags:
+      - aprova-plano-controller
+      operationId: alteraAprovacaoManual
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AprovacaoManualRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/AprovacaoManualResponse"
+  "/instrucoes/{id}":
+    get:
+      tags:
+      - instrucao-controller
+      operationId: obter_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/InstrucaoResponse"
+    put:
+      tags:
+      - instrucao-controller
+      operationId: alterar_7
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/InstrucaoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/InstrucaoResponse"
+    delete:
+      tags:
+      - instrucao-controller
+      operationId: excluir_2
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/InstrucaoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/incidentes/{id}":
+    get:
+      tags:
+      - incidente-controller
+      operationId: obterPorId_2
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/IncidenteResponse"
+        '400':
+          description: Bad Request
+    put:
+      tags:
+      - incidente-controller
+      operationId: alterar_8
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IncidenteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/IncidenteResponse"
+        '400':
+          description: Bad Request
+    delete:
+      tags:
+      - incidente-controller
+      operationId: excluir_4
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+  "/incidentes-descontinuidade/{id}":
+    get:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: obterPorId_3
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/IncidenteDescontinuidadeResponse"
+    put:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: alterar_9
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IncidenteDescontinuidadeRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/IncidenteDescontinuidadeResponse"
+    delete:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: excluir_5
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/grupos-funcionais/{id}":
+    put:
+      tags:
+      - grupo-funcional-controller
+      operationId: alterar_10
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/GrupoFuncionalRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/GrupoFuncionalResponse"
+    delete:
+      tags:
+      - grupo-funcional-controller
+      operationId: excluir_6
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/GrupoFuncionalRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/fornecedores/{id}":
+    get:
+      tags:
+      - fornecedor-controller
+      operationId: obter_4
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/FornecedorResponse"
+    put:
+      tags:
+      - fornecedor-controller
+      operationId: alterar_11
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/FornecedorRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/FornecedorResponse"
+    delete:
+      tags:
+      - fornecedor-controller
+      operationId: excluir_7
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/FornecedorRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/colaborador/{id}":
+    get:
+      tags:
+      - contato-plano-controller
+      operationId: listarById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ContatoPlano"
+        '400':
+          description: Bad Request
+    put:
+      tags:
+      - contato-plano-controller
+      operationId: alterar_12
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ContatoPlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ContatoPlanoResponse"
+        '400':
+          description: Bad Request
+    delete:
+      tags:
+      - contato-plano-controller
+      operationId: excluir_9
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ContatoPlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+  "/atividades/{id}":
+    get:
+      tags:
+      - atividade-controller
+      operationId: obter_5
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/AtividadeResponse"
+    put:
+      tags:
+      - atividade-controller
+      operationId: alterar_13
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AtividadeRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/AtividadeResponse"
+    delete:
+      tags:
+      - atividade-controller
+      operationId: excluir_10
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AtividadeRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/tipos-planos":
+    get:
+      tags:
+      - tipo-plano-controller
+      operationId: listar_1
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoPlanoResponse"
+    post:
+      tags:
+      - tipo-plano-controller
+      operationId: incluir
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/TipoPlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/TipoPlanoResponse"
+  "/tipos-fornecedores":
+    get:
+      tags:
+      - tipo-fornecedor-controller
+      operationId: listar_2
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoFornecedorResponse"
+    post:
+      tags:
+      - tipo-fornecedor-controller
+      operationId: incluir_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/TipoFornecedorRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/TipoFornecedorResponse"
+  "/teste/validacao":
+    get:
+      tags:
+      - validacao-plano-controller
+      operationId: lista
+      parameters:
+      - name: idPlanoGCN
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: nomeAbaPlano
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: idUsuarioCTA
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/ValidacaoPlanoResponse"
+    post:
+      tags:
+      - validacao-plano-controller
+      operationId: incluir_2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ValidacaoPlanoRequest"
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ValidacaoPlanoResponse"
+  "/sistemas":
+    get:
+      tags:
+      - sistema-controller
+      operationId: listar_4
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/SistemaResponse"
+    post:
+      tags:
+      - sistema-controller
+      operationId: incluir_3
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/SistemaRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/SistemaResponse"
+  "/recursos/sistema":
+    get:
+      tags:
+      - recursos-controller
+      operationId: listarSistema
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/RecursoSistemaResponse"
+    post:
+      tags:
+      - recursos-controller
+      operationId: cadastrarRecursoSistema
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoSistemaRequest"
+        required: true
+      responses:
+        '201':
+          description: Created
+  "/recursos/infraestrutura":
+    get:
+      tags:
+      - recursos-controller
+      operationId: listarInfraEstrutura
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/RecursoInfraestruturaResponse"
+    post:
+      tags:
+      - recursos-controller
+      operationId: cadastrarRecursoInfraestrutura
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoInfraestruturaRequest"
+        required: true
+      responses:
+        '201':
+          description: Created
+  "/recursos/humanos":
+    get:
+      tags:
+      - recursos-controller
+      operationId: listarHumanos
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/RecursoListagemHumanosResponse"
+    post:
+      tags:
+      - recursos-controller
+      operationId: cadastrarRecursoHumano
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoHumanoRequest"
+        required: true
+      responses:
+        '201':
+          description: Created
+  "/planos":
+    get:
+      tags:
+      - plano-controller
+      operationId: listar_9
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/PlanoResponse"
+    post:
+      tags:
+      - plano-controller
+      operationId: incluir_4
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/PlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PlanoResponse"
+  "/planos/teste/instituicao":
+    post:
+      tags:
+      - plano-teste-controller
+      operationId: registrarOperacoesAbaInstituicao
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AbaInstituicaoTesteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/planos/teste/iniciar":
+    post:
+      tags:
+      - plano-teste-controller
+      operationId: iniciar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/InicioTesteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: integer
+                format: int32
+  "/planos/teste/dados-gerais":
+    post:
+      tags:
+      - plano-teste-controller
+      operationId: registrarOperacoesAbaDadosGerais
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AbaDadosGeraisTesteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/planos/teste/conclusao":
+    get:
+      tags:
+      - plano-teste-controller
+      operationId: recuperarSeTesteFoiConcluido
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: idUsuarioCTA
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+    post:
+      tags:
+      - plano-teste-controller
+      operationId: concluir
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ConclusaoTesteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/plano/aprovacao/manual":
+    get:
+      tags:
+      - aprova-plano-controller
+      operationId: buscaPorIdAprovacaoManual
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/AprovacaoManualResponse"
+    post:
+      tags:
+      - aprova-plano-controller
+      operationId: incluiAprovacaoManual
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AprovacaoManualRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/mail":
+    post:
+      tags:
+      - email-controller
+      operationId: enviarEmail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                "$ref": "#/components/schemas/EmailRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/mail/marcar-envio-email":
+    post:
+      tags:
+      - email-controller
+      operationId: marcarDestinatarioEmail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/MarcarEmailTesteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/instrucoes":
+    get:
+      tags:
+      - instrucao-controller
+      operationId: listar_11
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/InstrucaoResponse"
+    post:
+      tags:
+      - instrucao-controller
+      operationId: incluir_5
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/InstrucaoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/InstrucaoResponse"
+  "/incidentes":
+    get:
+      tags:
+      - incidente-controller
+      operationId: listar_13
+      parameters:
+      - name: idPlano
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/IncidenteResponse"
+        '400':
+          description: Bad Request
+    post:
+      tags:
+      - incidente-controller
+      operationId: incluir_6
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IncidenteRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/IncidenteResponse"
+        '400':
+          description: Bad Request
+  "/incidentes-descontinuidade":
+    get:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: listar_14
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/IncidenteDescontinuidadeResponse"
+    post:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: incluir_7
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IncidenteDescontinuidadeRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/IncidenteDescontinuidadeResponse"
+  "/incidentes-descontinuidade/inativar/{id}":
+    post:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: inativar
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IncidenteDescontinuidadeRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/incidentes-descontinuidade/concluir/{id}":
+    post:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: concluir_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IncidenteDescontinuidadeRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/grupos-funcionais":
+    get:
+      tags:
+      - grupo-funcional-controller
+      operationId: listar_15
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GrupoFuncionalResponse"
+    post:
+      tags:
+      - grupo-funcional-controller
+      operationId: incluir_8
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/GrupoFuncionalRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/GrupoFuncionalResponse"
+  "/gerenciar":
+    post:
+      tags:
+      - gerenciar-controller
+      operationId: incluir_9
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/GerenciarRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/ContatoPlanoAbaPlano"
+  "/fornecedores":
+    get:
+      tags:
+      - fornecedor-controller
+      operationId: listar_16
+      parameters:
+      - name: idPlano
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/FornecedorResponse"
+    post:
+      tags:
+      - fornecedor-controller
+      operationId: incluir_10
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/FornecedorRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/FornecedorResponse"
+  "/colaborador":
+    get:
+      tags:
+      - contato-plano-controller
+      operationId: listar_18
+      parameters:
+      - name: idPlano
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/ContatoPlanoResponse"
+        '400':
+          description: Bad Request
+    post:
+      tags:
+      - contato-plano-controller
+      operationId: incluir_11
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ContatoPlanoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/ContatoPlanoResponse"
+        '400':
+          description: Bad Request
+  "/atividades":
+    get:
+      tags:
+      - atividade-controller
+      operationId: listar_19
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/AtividadeResponse"
+    post:
+      tags:
+      - atividade-controller
+      operationId: incluir_12
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AtividadeRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/AtividadeResponse"
+  "/aprovacao":
+    post:
+      tags:
+      - aprovacao-controller
+      operationId: enviarAprovacao
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/AprovacaoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+                enum:
+                - 100 CONTINUE
+                - 101 SWITCHING_PROTOCOLS
+                - 102 PROCESSING
+                - 103 CHECKPOINT
+                - 200 OK
+                - 201 CREATED
+                - 202 ACCEPTED
+                - 203 NON_AUTHORITATIVE_INFORMATION
+                - 204 NO_CONTENT
+                - 205 RESET_CONTENT
+                - 206 PARTIAL_CONTENT
+                - 207 MULTI_STATUS
+                - 208 ALREADY_REPORTED
+                - 226 IM_USED
+                - 300 MULTIPLE_CHOICES
+                - 301 MOVED_PERMANENTLY
+                - 302 FOUND
+                - 302 MOVED_TEMPORARILY
+                - 303 SEE_OTHER
+                - 304 NOT_MODIFIED
+                - 305 USE_PROXY
+                - 307 TEMPORARY_REDIRECT
+                - 308 PERMANENT_REDIRECT
+                - 400 BAD_REQUEST
+                - 401 UNAUTHORIZED
+                - 402 PAYMENT_REQUIRED
+                - 403 FORBIDDEN
+                - 404 NOT_FOUND
+                - 405 METHOD_NOT_ALLOWED
+                - 406 NOT_ACCEPTABLE
+                - 407 PROXY_AUTHENTICATION_REQUIRED
+                - 408 REQUEST_TIMEOUT
+                - 409 CONFLICT
+                - 410 GONE
+                - 411 LENGTH_REQUIRED
+                - 412 PRECONDITION_FAILED
+                - 413 PAYLOAD_TOO_LARGE
+                - 413 REQUEST_ENTITY_TOO_LARGE
+                - 414 URI_TOO_LONG
+                - 414 REQUEST_URI_TOO_LONG
+                - 415 UNSUPPORTED_MEDIA_TYPE
+                - 416 REQUESTED_RANGE_NOT_SATISFIABLE
+                - 417 EXPECTATION_FAILED
+                - 418 I_AM_A_TEAPOT
+                - 419 INSUFFICIENT_SPACE_ON_RESOURCE
+                - 420 METHOD_FAILURE
+                - 421 DESTINATION_LOCKED
+                - 422 UNPROCESSABLE_ENTITY
+                - 423 LOCKED
+                - 424 FAILED_DEPENDENCY
+                - 425 TOO_EARLY
+                - 426 UPGRADE_REQUIRED
+                - 428 PRECONDITION_REQUIRED
+                - 429 TOO_MANY_REQUESTS
+                - 431 REQUEST_HEADER_FIELDS_TOO_LARGE
+                - 451 UNAVAILABLE_FOR_LEGAL_REASONS
+                - 500 INTERNAL_SERVER_ERROR
+                - 501 NOT_IMPLEMENTED
+                - 502 BAD_GATEWAY
+                - 503 SERVICE_UNAVAILABLE
+                - 504 GATEWAY_TIMEOUT
+                - 505 HTTP_VERSION_NOT_SUPPORTED
+                - 506 VARIANT_ALSO_NEGOTIATES
+                - 507 INSUFFICIENT_STORAGE
+                - 508 LOOP_DETECTED
+                - 509 BANDWIDTH_LIMIT_EXCEEDED
+                - 510 NOT_EXTENDED
+                - 511 NETWORK_AUTHENTICATION_REQUIRED
+  "/anexos":
+    get:
+      tags:
+      - gerenciar-anexos-plano-controller
+      operationId: listar_20
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/AnexoPlanoResponse"
+    post:
+      tags:
+      - gerenciar-anexos-plano-controller
+      operationId: salvarAnexo
+      parameters:
+      - name: idPlanoGcn
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: idDocumento
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: nomeArquivoAnexo
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/AprovacaoManualAnexo"
+  "/tipos-testes/{idPlanoGcn}":
+    get:
+      tags:
+      - tipo-teste-controller
+      operationId: buscaTipoTeste
+      parameters:
+      - name: idPlanoGcn
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoTeste"
+  "/tipos-procedimentos":
+    get:
+      tags:
+      - tipo-procedimento-controller
+      operationId: listar
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoProcedimentoResponse"
+  "/tipos-planos/validacao/duplicidade":
+    get:
+      tags:
+      - tipo-plano-controller
+      operationId: validarDuplicidadeNome
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/tipos-planos/validacao/duplicidade/sigla":
+    get:
+      tags:
+      - tipo-plano-controller
+      operationId: validarDuplicidadeSigla
+      parameters:
+      - name: sigla
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/tipos-planos/page/filters":
+    get:
+      tags:
+      - tipo-plano-controller
+      operationId: listPageFilter
+      parameters:
+      - name: sigla
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: bolAtivo
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 5
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+          default: nome
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ASC
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PageTipoPlano"
+  "/tipos-planos/incidente":
+    get:
+      tags:
+      - tipo-plano-controller
+      operationId: listarTipoPlanoIncidente
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoPlanoResponse"
+  "/tipos-fornecedores/validacao/duplicidade":
+    get:
+      tags:
+      - tipo-fornecedor-controller
+      operationId: validarDuplicidadeNome_1
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/tipos-documentos-relatorios":
+    get:
+      tags:
+      - tipo-documento-relatorio-controller
+      operationId: listarTiposDeDocumentos
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoDocumentoRelatorioResponse"
+  "/situacoes-planos":
+    get:
+      tags:
+      - situacao-plano-controller
+      operationId: listar_3
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/SituacaoPlano"
+  "/situacoes-planos/plano":
+    get:
+      tags:
+      - situacao-plano-controller
+      operationId: listarSituacaoPlano
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/SituacaoPlano"
+  "/situacoes-planos/plano/teste":
+    get:
+      tags:
+      - situacao-plano-controller
+      operationId: listarSituacaoPlanoTeste
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/SituacaoPlano"
+  "/sistemas/validacao/duplicidade":
+    get:
+      tags:
+      - sistema-controller
+      operationId: validarDuplicidade
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/sistemas/testeDeploy":
+    get:
+      tags:
+      - sistema-controller
+      operationId: testeDeploy
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/sistemas/page/filters":
+    get:
+      tags:
+      - sistema-controller
+      operationId: listPageFilter_1
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: bolAtivo
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 5
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+          default: nome
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ASC
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PageSistema"
+  "/relatorio-teste":
+    get:
+      tags:
+      - relatorio-teste-controller
+      operationId: listarPorIdIncidente
+      parameters:
+      - name: idPlanoGcn
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: bolMarcaDgua
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: tipoDocumento
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 2
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/relatorio-plano":
+    get:
+      tags:
+      - relatorio-plano-controller
+      operationId: imprimirRelatorioPlano
+      parameters:
+      - name: idPlanoGcn
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: bolMarcaDgua
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: tipoDocumento
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/relatorio-excel":
+    get:
+      tags:
+      - relatorio-excel-controller
+      operationId: exportarExcel
+      parameters:
+      - name: central
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+  "/relatorio-excel/unidade":
+    get:
+      tags:
+      - relatorio-excel-controller
+      operationId: obterUnidade
+      parameters:
+      - name: idInstituicao
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: idUnidade
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/InstituicaoUnidadeResponse"
+  "/relatorio-excel/plano-sintetico":
+    get:
+      tags:
+      - relatorio-excel-controller
+      operationId: exportarExcelPlanoSintetico
+      parameters:
+      - name: central
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: bolCcs
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: tipoPlano
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: usuarioCta
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: produtoServico
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: anoExercicio
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+  "/relatorio-excel/plano-analitico":
+    get:
+      tags:
+      - relatorio-excel-controller
+      operationId: exportarExcelPlanoAnalitico
+      parameters:
+      - name: filter
+        in: query
+        required: true
+        schema:
+          "$ref": "#/components/schemas/RelatorioPlanoAnaliticoFilter"
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+  "/relatorio-excel/incidente-descontinuidade-sintetico":
+    get:
+      tags:
+      - relatorio-excel-controller
+      operationId: exportarExcelIncidenteDescontinuidadeSintetico
+      parameters:
+      - name: bolCcs
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: central
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: tipoPlano
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: produtoServico
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: idIncidente
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: situacao
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: anoExercicio
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: concluido
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: usuarioCta
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  "/relatorio-excel/incidente-descontinuidade-analitico":
+    get:
+      tags:
+      - relatorio-excel-controller
+      operationId: exportarExcelIncidenteDescontinuidadeAnalitico
+      parameters:
+      - name: bolCcs
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: central
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: tipoPlano
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: produtoServico
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: idIncidente
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: situacao
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: anoExercicio
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: concluido
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: usuarioCta
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  "/relatorio-excel/central":
+    get:
+      tags:
+      - relatorio-excel-controller
+      operationId: obterInstituicao
+      parameters:
+      - name: idCentral
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/CentralResponse"
+  "/relatorio-documento/plano":
+    get:
+      tags:
+      - relatorio-documento-controller
+      operationId: listar_5
+      parameters:
+      - name: bolCcs
+        in: query
+        required: true
+        schema:
+          type: boolean
+      - name: central
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: tipoPlano
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: produtoServico
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+      - name: anoExercicio
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: tipoDocumento
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/RelatorioDocumentoPlanoResponse"
+  "/relatorio-documento/incidente-descontinuidade":
+    get:
+      tags:
+      - relatorio-documento-controller
+      operationId: listarIncidenteDescontinuidade
+      parameters:
+      - name: bolCcs
+        in: query
+        required: true
+        schema:
+          type: boolean
+      - name: central
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: tipoPlano
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: idIncidente
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: produtoServico
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: anoExercicio
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: tipoDocumento
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/RelatorioDocumentoIncidenteDescontinuidadeResponse"
+  "/relatorio-documento/exportar":
+    get:
+      tags:
+      - relatorio-documento-controller
+      operationId: exportarExcelPlanoSintetico_1
+      parameters:
+      - name: ids
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: tipoDocumento
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+  "/recursos/infraestrutura/validacao/duplicidade":
+    get:
+      tags:
+      - recursos-controller
+      operationId: validarDuplicidadeDescricaoInfraestrutura
+      parameters:
+      - name: descricao
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/recursos/humanos/validacao/duplicidade":
+    get:
+      tags:
+      - recursos-controller
+      operationId: validarDuplicidadeDescricaoHumanos
+      parameters:
+      - name: descricao
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/recurso-anexo/{id}":
+    get:
+      tags:
+      - recurso-anexo-controller
+      operationId: listar_6
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/RecursoAnexoResponse"
+    delete:
+      tags:
+      - recurso-anexo-controller
+      operationId: excluir_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/RecursoAnexoRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+  "/produtos-servicos":
+    get:
+      tags:
+      - tipo-produto-servico-controller
+      operationId: listar_7
+      parameters:
+      - name: idTipoPlano
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+  "/produtos-servicos/{id}":
+    get:
+      tags:
+      - tipo-produto-servico-controller
+      operationId: obterPorId_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+  "/produtos-servicos/planos":
+    get:
+      tags:
+      - tipo-produto-servico-controller
+      operationId: listarProdutoPlano
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+  "/produtos-servicos/incidente":
+    get:
+      tags:
+      - tipo-produto-servico-controller
+      operationId: listarProdutoServicoIncidente
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+  "/procedimentos/listar/{id}":
+    get:
+      tags:
+      - procedimento-controller
+      operationId: listar_8
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/ProcedimentoResponse"
+  "/planos/{idPlano}/pendencias-validacoes":
+    get:
+      tags:
+      - plano-pendencias-validacao-controller
+      operationId: listarPendenciaValidacoes
+      parameters:
+      - name: idPlano
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: idUsuarioCta
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/PlanoPendenciasValidacaoResponse"
+  "/planos/visualizar-assinado":
+    get:
+      tags:
+      - plano-controller
+      operationId: visualizarDocumento
+      parameters:
+      - name: id
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: tipoDocumento
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/planos/teste":
+    get:
+      tags:
+      - plano-teste-controller
+      operationId: listaPlanosPorFiltro
+      parameters:
+      - name: central
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: tiposPlanosId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: produtoServicoId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: situacao
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: bolAtivo
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: bolCCS
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: usuarioCTA
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 5
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+          default: idPlanoGcn
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ASC
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PagePlanoGcn"
+  "/planos/teste/detalhes":
+    get:
+      tags:
+      - plano-teste-controller
+      operationId: buscar_1
+      parameters:
+      - name: idPlano
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: idUsuario
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/DetalhesTesteResponse"
+  "/planos/pendencias/{planoId}":
+    get:
+      tags:
+      - plano-controller
+      operationId: listarPendencias
+      parameters:
+      - name: planoId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/PendenciaResponse"
+  "/planos/page/filters":
+    get:
+      tags:
+      - plano-controller
+      operationId: listPageFilter_2
+      parameters:
+      - name: central
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: unidade
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: tiposPlanosId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: produtoServicoId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: situacao
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: bolAtivo
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: bolCCS
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: bolDataCriacao
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: bolDataAprovacao
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 5
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+          default: dataHoraInclusao
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+          default: DESC
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PagePlanoGcn"
+  "/perfis-contatos":
+    get:
+      tags:
+      - perfil-contato-controller
+      operationId: listar_10
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/PerfilContato"
+  "/mail/aposVencimento":
+    get:
+      tags:
+      - email-controller
+      operationId: buscaEnviaEmailAposVencimento
+      responses:
+        '200':
+          description: OK
+  "/mail/antesVencimento":
+    get:
+      tags:
+      - email-controller
+      operationId: buscaEnviaEmailAntesVencimento
+      responses:
+        '200':
+          description: OK
+  "/instrucoes/plano/{id}":
+    get:
+      tags:
+      - instrucao-controller
+      operationId: listarPorIdIncidente_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/InstrucaoResponse"
+  "/instrucao-anexo/{id}":
+    get:
+      tags:
+      - instrucao-teste-anexo-controller
+      operationId: listar_12
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/InstrucaoTesteAnexoResponse"
+    delete:
+      tags:
+      - instrucao-teste-anexo-controller
+      operationId: excluir_3
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  "/incidentes/validacao/duplicidade":
+    get:
+      tags:
+      - incidente-controller
+      operationId: validarDuplicidade_1
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+        '400':
+          description: Bad Request
+  "/incidentes/page/filters":
+    get:
+      tags:
+      - incidente-controller
+      operationId: listPageFilter_3
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: tipoProdutoServicoId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: bolAtivo
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: bolVisivelTodasInst
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: tipoPlanoId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 5
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+          default: nome
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ASC
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                "$ref": "#/components/schemas/PageIncidenteListagemResponse"
+        '400':
+          description: Bad Request
+  "/incidentes/exportar":
+    get:
+      tags:
+      - incidente-controller
+      operationId: exportarExcel_1
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: tipoProdutoServicoId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: bolAtivo
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: bolVisivelTodasInst
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: tipoPlanoId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: usuarioCta
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      - name: orderBy
+        in: query
+        required: false
+        schema:
+          type: string
+          default: nome
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ASC
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+        '400':
+          description: Bad Request
+  "/incidentes/contato/{id}":
+    get:
+      tags:
+      - incidente-controller
+      operationId: contatoTemProcedimento
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+        '400':
+          description: Bad Request
+  "/incidentes-descontinuidade/tipos-origem":
+    get:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: listaTiposOrigem
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoOrigemIncidenteResponse"
+  "/incidentes-descontinuidade/tipos-categoria":
+    get:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: listaTiposCategoria
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoCategoriaIncidenteResponse"
+  "/incidentes-descontinuidade/consulta":
+    get:
+      tags:
+      - incidente-descontinuidade-controller
+      operationId: listPageFilter_4
+      parameters:
+      - name: central
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: singular
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: pa
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: idTipoPlano
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: produtoServico
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: concluido
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: bolAtivo
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
+      - name: bolCCS
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/IncidenteDescontinuidadeListResponse"
+  "/imagem/{id}":
+    get:
+      tags:
+      - imagem-controller
+      operationId: obter_2
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: string
+  "/grupos-funcionais/validacao/duplicidade":
+    get:
+      tags:
+      - grupo-funcional-controller
+      operationId: validarDuplicidadeNome_2
+      parameters:
+      - name: nome
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+      - name: idPlanoGCN
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/grupos-funcionais/plano/{id}":
+    get:
+      tags:
+      - grupo-funcional-controller
+      operationId: obter_3
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GrupoFuncionalResponse"
+  "/gerenciar/{id}":
+    get:
+      tags:
+      - gerenciar-controller
+      operationId: buscaTipoTeste_1
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoTeste"
+  "/gerenciar/verificar/{id}":
+    get:
+      tags:
+      - gerenciar-controller
+      operationId: verificar
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: boolean
+  "/gerenciar/contatos":
+    get:
+      tags:
+      - gerenciar-controller
+      operationId: listarContatosComPermissoes
+      parameters:
+      - name: idGrupoFuncional
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/ContatoPlanoTesteResponse"
+  "/gerenciar/contatos/{id}":
+    get:
+      tags:
+      - gerenciar-controller
+      operationId: obterContatosEmailPorId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  type: integer
+                  format: int64
+  "/gerenciar/aba-planos":
+    get:
+      tags:
+      - gerenciar-controller
+      operationId: ListarAbaPano
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/AbaPlano"
+  "/gerenciar/aba-gerenciar/{id}":
+    get:
+      tags:
+      - gerenciar-controller
+      operationId: carregarAbaGerenciar
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GerenciarResponse"
+  "/fornecedores/produtos-servicos":
+    get:
+      tags:
+      - fornecedor-controller
+      operationId: listarAgrupadoPorProduto
+      parameters:
+      - name: idPlano
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TipoProdutoServicoFornecedorResponse"
+  "/conclusao-anexo/{id}":
+    get:
+      tags:
+      - conclusao-anexo-controller
+      operationId: listar_17
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/ConclusaoTesteAnexoResponse"
+    delete:
+      tags:
+      - conclusao-anexo-controller
+      operationId: excluir_8
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+  "/colaborador/grupo-funcional/{id}":
+    get:
+      tags:
+      - contato-plano-controller
+      operationId: listarPorId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/ContatoPlanoResponse"
+        '400':
+          description: Bad Request
+  "/aprovacao/{id}":
+    get:
+      tags:
+      - aprovacao-controller
+      operationId: listarAprovadorPorIdPlano
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/AprovacaoResponse"
+  "/anos-exercicio":
+    get:
+      tags:
+      - anos-exercicio-controller
+      operationId: getAnosPassados
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                type: array
+                items:
+                  type: integer
+                  format: int32
+  "/anexos/{id}":
+    delete:
+      tags:
+      - gerenciar-anexos-plano-controller
+      operationId: excluir_11
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    TipoPlanoRequest:
+      required:
+      - bolAtivo
+      - nome
+      - sigla
+      type: object
+      properties:
+        idTipoPlano:
+          type: integer
+          format: int64
+        sigla:
+          maxLength: 4
+          minLength: 0
+          type: string
+        nome:
+          maxLength: 150
+          minLength: 0
+          type: string
+        bolAtivo:
+          type: boolean
+        incidenteId:
+          type: integer
+          format: int64
+    TipoPlanoResponse:
+      type: object
+      properties:
+        idTipoPlano:
+          type: integer
+          format: int64
+        sigla:
+          type: string
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+    TipoFornecedorRequest:
+      type: object
+      properties:
+        idTipoFornecedor:
+          type: integer
+          format: int64
+        numTipoFornecedor:
+          type: integer
+          format: int32
+        nomeTipoFornecedor:
+          type: string
+        bolAtivo:
+          type: boolean
+    TipoFornecedorResponse:
+      type: object
+      properties:
+        idTipoFornecedor:
+          type: integer
+          format: int64
+        numTipoFornecedor:
+          type: integer
+          format: int32
+        nomeTipoFornecedor:
+          type: string
+        bolAtivo:
+          type: boolean
+    ValidacaoPlanoRequest:
+      type: object
+      properties:
+        idPlanoGCN:
+          type: integer
+          format: int64
+        nomeAbaPlano:
+          type: string
+        bolValidado:
+          type: boolean
+        idAtividade:
+          type: integer
+          format: int64
+        idPlanoProdutoServico:
+          type: integer
+          format: int64
+        idRecursoInfraEstrutura:
+          type: integer
+          format: int64
+        idRecursoHumano:
+          type: integer
+          format: int64
+        idRecursoSistema:
+          type: integer
+          format: int64
+        idTipoProcedimento:
+          type: integer
+          format: int64
+        idProcedimento:
+          type: integer
+          format: int64
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        idGrupoFuncional:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        idIncidente:
+          type: integer
+          format: int64
+    ValidacaoPlanoResponse:
+      type: object
+      properties:
+        idValidacaoPlano:
+          type: integer
+          format: int64
+        idPlanoGCN:
+          type: integer
+          format: int64
+        nomeAbaPlano:
+          type: string
+        bolValidado:
+          type: boolean
+        idAtividade:
+          type: integer
+          format: int64
+        idPlanoProdutoServico:
+          type: integer
+          format: int64
+        idRecursoInfraEstrutura:
+          type: integer
+          format: int64
+        idRecursoHumano:
+          type: integer
+          format: int64
+        idRecursoSistema:
+          type: integer
+          format: int64
+        idTipoProcedimento:
+          type: integer
+          format: int64
+        idProcedimento:
+          type: integer
+          format: int64
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        idGrupoFuncional:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        idIncidente:
+          type: integer
+          format: int64
+    SistemaRequest:
+      required:
+      - bolAtivo
+      - bolVisivelTodasInst
+      - nome
+      type: object
+      properties:
+        nome:
+          maxLength: 50
+          minLength: 0
+          type: string
+        bolAtivo:
+          type: boolean
+        bolVisivelTodasInst:
+          type: boolean
+    SistemaResponse:
+      type: object
+      properties:
+        idSistema:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolVisivelTodasInst:
+          type: boolean
+    RecursoSistemaRequest:
+      required:
+      - descricao
+      - nomeSistema
+      type: object
+      properties:
+        nomeSistema:
+          maxLength: 100
+          minLength: 0
+          type: string
+        descricao:
+          maxLength: 255
+          minLength: 0
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    AprovacaoDocumento:
+      type: object
+      properties:
+        idAprovacaoDocumento:
+          type: integer
+          format: int64
+        tipoDocumentoAprovacao:
+          type: integer
+          format: int32
+        dataHoraEnvioAprovacao:
+          type: string
+          format: date-time
+        dataHoraAprovacao:
+          type: string
+          format: date-time
+        idContatoPlano:
+          type: integer
+          format: int64
+        idDocumento:
+          type: integer
+        idPlanoGcn:
+          type: integer
+          format: int64
+        idOcorrenciaProcesso:
+          type: integer
+    Incidente:
+      type: object
+      properties:
+        idIncidente:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        tipoProdutoServico:
+          "$ref": "#/components/schemas/TipoProdutoServico"
+        bolAtivo:
+          type: boolean
+        bolVisivelCentrais:
+          type: boolean
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    PlanoGcn:
+      type: object
+      properties:
+        idPlanoGcn:
+          type: integer
+          format: int64
+        tipoPlano:
+          "$ref": "#/components/schemas/TipoPlano"
+        nomePlano:
+          type: string
+        situacaoPlano:
+          "$ref": "#/components/schemas/SituacaoPlano"
+        planoInstituicao:
+          type: array
+          items:
+            "$ref": "#/components/schemas/PlanoInstituicao"
+        planoProdutoServico:
+          type: array
+          items:
+            "$ref": "#/components/schemas/PlanoProdutoServico"
+        tipoProdutoServicos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/TipoProdutoServico"
+        aprovacaoDocumento:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AprovacaoDocumento"
+        bolCcs:
+          type: boolean
+        descObjetivoPlano:
+          type: string
+        descBaseNormativa:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolResponsabilidadeUnidade:
+          type: boolean
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        dataHoraInicioTeste:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+        nomeCargoResponsavel:
+          type: string
+        idTipoTeste:
+          type: integer
+          format: int64
+        descVersaoPlano:
+          type: string
+    PlanoInstituicao:
+      type: object
+      properties:
+        idPlanoInstituicao:
+          type: integer
+          format: int64
+        idPlanoGcn:
+          type: integer
+          format: int64
+        unidadePlano:
+          type: array
+          items:
+            "$ref": "#/components/schemas/UnidadePlano"
+        idInstituicaoResponsavel:
+          type: integer
+          format: int64
+        idInstituicao:
+          type: integer
+          format: int64
+    PlanoProdutoServico:
+      type: object
+      properties:
+        idPlanoProdutoServico:
+          type: integer
+          format: int64
+        idProdutoServico:
+          type: integer
+          format: int64
+        idPlanoGcn:
+          type: integer
+          format: int64
+        tipoProdutoServico:
+          "$ref": "#/components/schemas/TipoProdutoServico"
+        idUsuarioCTA:
+          type: string
+        descContato:
+          type: string
+        descArea:
+          type: string
+        incidentes:
+          type: array
+          items:
+            "$ref": "#/components/schemas/Incidente"
+    RecursoAnexo:
+      type: object
+      properties:
+        idRecursoInfraestruturaAnexo:
+          type: integer
+          format: int64
+        recursoInfraestrutura:
+          "$ref": "#/components/schemas/RecursoInfraestrutura"
+        idDocumento:
+          type: integer
+          format: int64
+        nomeRecursoAnexo:
+          type: string
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioAtualizacao:
+          type: string
+    RecursoAnexoRequest:
+      required:
+      - idDocumento
+      - nomeRecursoAnexo
+      type: object
+      properties:
+        idRecursoAnexo:
+          type: integer
+          format: int64
+        recursoInfraestrutura:
+          "$ref": "#/components/schemas/RecursoInfraestrutura"
+        idDocumento:
+          type: integer
+          format: int64
+        nomeRecursoAnexo:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    RecursoInfraestrutura:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        recursoAnexo:
+          type: array
+          items:
+            "$ref": "#/components/schemas/RecursoAnexo"
+        descricao:
+          type: string
+        nomeLocal:
+          type: string
+        descricaoLocal:
+          type: string
+        quantidade:
+          type: integer
+          format: int32
+        plano:
+          "$ref": "#/components/schemas/PlanoGcn"
+    RecursoInfraestruturaRequest:
+      required:
+      - descricao
+      - nomeLocal
+      type: object
+      properties:
+        descricao:
+          maxLength: 255
+          minLength: 0
+          type: string
+        nomeLocal:
+          maxLength: 100
+          minLength: 0
+          type: string
+        descricaoLocal:
+          maxLength: 255
+          minLength: 0
+          type: string
+        quantidade:
+          type: integer
+          format: int32
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/RecursoAnexoRequest"
+        idUsuarioAtualizacao:
+          type: string
+    SituacaoPlano:
+      type: object
+      properties:
+        idSituacaoPlanoGcn:
+          type: integer
+          format: int64
+        nomeSituacaoPlanoGcn:
+          type: string
+        bolAtivo:
+          type: boolean
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    TipoPlano:
+      type: object
+      properties:
+        idTipoPlano:
+          type: integer
+          format: int64
+        incidente:
+          type: array
+          items:
+            "$ref": "#/components/schemas/Incidente"
+        sigla:
+          type: string
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    TipoProdutoServico:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolRecursoObrigatorioGCN:
+          type: boolean
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioAtualizacao:
+          type: string
+    UnidadePlano:
+      type: object
+      properties:
+        idUnidadePlano:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        descContato:
+          type: string
+        idPlanoInstituicao:
+          type: integer
+          format: int64
+        idUnidade:
+          type: integer
+          format: int64
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    RecursoHumanoRequest:
+      required:
+      - descricao
+      type: object
+      properties:
+        descricao:
+          maxLength: 255
+          minLength: 0
+          type: string
+        quantidade:
+          type: integer
+          format: int32
+        idUsuarioAtualizacao:
+          type: string
+    OrdemIncidenteProcedimentoRequest:
+      type: object
+      properties:
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        idProcedimento:
+          type: integer
+          format: int64
+        idIncidente:
+          type: integer
+          format: int64
+        numeroOrdem:
+          type: integer
+          format: int32
+    IncidenteProcedimentoRequest:
+      type: object
+      properties:
+        idProcedimento:
+          type: integer
+          format: int64
+        idIncidente:
+          type: integer
+          format: int64
+        idContatoPlano:
+          type: integer
+          format: int64
+        numeroOrdem:
+          type: integer
+          format: int32
+    GrupoFuncionalRequest:
+      type: object
+      properties:
+        nomeGrupoFuncional:
+          type: string
+        idPlanoGcn:
+          type: integer
+          format: int64
+        idUsuarioAtualizacao:
+          type: string
+    PlanoInstituicaoRequest:
+      type: object
+      properties:
+        idPlanoInstituicao:
+          type: integer
+          format: int64
+        idInstituicaoResponsavel:
+          type: integer
+          format: int64
+        idInstituicao:
+          type: integer
+          format: int64
+        idUnidadePlano:
+          type: integer
+          format: int64
+        idPlanoGcn:
+          type: integer
+          format: int64
+    PlanoInstituicaoRequestDTO:
+      type: object
+      properties:
+        central:
+          type: integer
+          format: int64
+        singular:
+          type: integer
+          format: int64
+        empresas:
+          type: array
+          items:
+            type: integer
+            format: int64
+    PlanoProdutoServicoRequest:
+      type: object
+      properties:
+        idPlanoProdutoServico:
+          type: integer
+          format: int64
+        idProdutoServico:
+          type: integer
+          format: int64
+        nomeArea:
+          type: string
+        nomeProduto:
+          type: string
+        idUsuarioCTA:
+          type: string
+        descContato:
+          type: string
+        idsIncidentes:
+          type: array
+          items:
+            type: integer
+            format: int64
+    PlanoRequest:
+      type: object
+      properties:
+        idPlanoGcn:
+          type: integer
+          format: int64
+        tipoPlanoId:
+          type: integer
+          format: int64
+        nomePlano:
+          type: string
+        situacaoPlanoId:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        planoInstituicaoId:
+          type: integer
+          format: int64
+        produtoServicoId:
+          type: integer
+          format: int64
+        bolCcs:
+          type: boolean
+        descObjetivoPlano:
+          type: string
+        descBaseNormativa:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolResponsabilidadeUnidade:
+          type: boolean
+        nomeCargoResponsavel:
+          type: string
+        planoProdutosServico:
+          type: array
+          items:
+            "$ref": "#/components/schemas/PlanoProdutoServicoRequest"
+        unidades:
+          type: array
+          items:
+            "$ref": "#/components/schemas/UnidadePlanoRequest"
+        listaPlanoInstituicao:
+          type: array
+          items:
+            "$ref": "#/components/schemas/PlanoInstituicaoRequest"
+        planoInstituicaoRequest:
+          "$ref": "#/components/schemas/PlanoInstituicaoRequestDTO"
+        planoInstituicao:
+          "$ref": "#/components/schemas/PlanoInstituicaoRequest"
+        grupoFuncional:
+          "$ref": "#/components/schemas/GrupoFuncionalRequest"
+        descVersaoPlano:
+          type: string
+        descContato:
+          type: string
+    UnidadePlanoRequest:
+      type: object
+      properties:
+        idUnidadePlano:
+          type: integer
+          format: int64
+        idUnidade:
+          type: integer
+          format: int64
+        idPlanoInstituicao:
+          type: integer
+          format: int64
+        idResponsavel:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        descContato:
+          type: string
+    ConclusaoFinalTesteRequest:
+      type: object
+      properties:
+        idPlano:
+          type: integer
+          format: int64
+        boolAvancar:
+          type: boolean
+        idUsuarioCTA:
+          type: string
+        justificativa:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/ConclusaoTesteAnexoRequest"
+    ConclusaoTesteAnexoRequest:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        idConclusaoTeste:
+          type: integer
+          format: int64
+        idDocumento:
+          type: integer
+          format: int64
+        nomeRecursoAnexo:
+          type: string
+        idUsuarioCTA:
+          type: string
+    ConclusaoFinalTesteResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        idPlano:
+          type: integer
+          format: int64
+        boolAvancar:
+          type: boolean
+        idUsuarioCTA:
+          type: string
+        justificativa:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/ConclusaoTesteAnexoResponse"
+    ConclusaoTesteAnexoResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        idConclusaoTeste:
+          type: integer
+          format: int64
+        idDocumento:
+          type: integer
+          format: int64
+        nomeRecursoAnexo:
+          type: string
+        dataAnexo:
+          type: string
+          format: date-time
+    AprovacaoManualAnexoRequest:
+      type: object
+      properties:
+        idAprovacaoManualAnexo:
+          type: integer
+          format: int64
+        idAprovacaoManual:
+          type: integer
+          format: int64
+        idDocumento:
+          type: integer
+          format: int64
+        nomeArquivoAnexo:
+          type: string
+    AprovacaoManualRequest:
+      type: object
+      properties:
+        idAprovacaoManual:
+          type: integer
+          format: int64
+        idPlanoGcn:
+          type: integer
+          format: int64
+        bolAvancar:
+          type: boolean
+        idUsuarioCTA:
+          type: string
+        justificativa:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AprovacaoManualAnexoRequest"
+    AprovacaoManualAnexoResponse:
+      type: object
+      properties:
+        idAprovacaoManualAnexo:
+          type: integer
+          format: int64
+        idAprovacaoManual:
+          type: integer
+          format: int64
+        idDocumento:
+          type: integer
+          format: int64
+        nomeArquivoAnexo:
+          type: string
+    AprovacaoManualResponse:
+      type: object
+      properties:
+        idAprovacaoManual:
+          type: integer
+          format: int64
+        idPlanoGcn:
+          type: integer
+          format: int64
+        bolAvancar:
+          type: boolean
+        idUsuarioCTA:
+          type: string
+        justificativa:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AprovacaoManualAnexoResponse"
+    Atividade:
+      type: object
+      properties:
+        idAtividade:
+          type: integer
+          format: int64
+        nomeAtividade:
+          type: string
+        grupoFuncional:
+          "$ref": "#/components/schemas/GrupoFuncional"
+        incidenteProcedimento:
+          "$ref": "#/components/schemas/IncidenteProcedimento"
+    ContatoPlano:
+      type: object
+      properties:
+        idContatoPlano:
+          type: integer
+          format: int64
+        grupoFuncional:
+          "$ref": "#/components/schemas/GrupoFuncional"
+        idUsuarioCTA:
+          type: string
+        telefone:
+          type: string
+        celular:
+          type: string
+        telefoneOpcional:
+          type: string
+        descCargo:
+          type: string
+        descEmailContato:
+          type: string
+        perfilContato:
+          "$ref": "#/components/schemas/PerfilContato"
+        descContato:
+          type: string
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    GrupoFuncional:
+      type: object
+      properties:
+        idGrupoFuncional:
+          type: integer
+          format: int64
+        nomeGrupoFuncional:
+          type: string
+        contatos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/ContatoPlano"
+        plano:
+          "$ref": "#/components/schemas/PlanoGcn"
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    IncidenteProcedimento:
+      type: object
+      properties:
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        procedimento:
+          "$ref": "#/components/schemas/Procedimento"
+        contatoPlano:
+          "$ref": "#/components/schemas/ContatoPlano"
+        incidente:
+          "$ref": "#/components/schemas/Incidente"
+        numeroOrdem:
+          type: integer
+          format: int32
+        instrucoes:
+          type: array
+          items:
+            "$ref": "#/components/schemas/Instrucao"
+        atividades:
+          type: array
+          items:
+            "$ref": "#/components/schemas/Atividade"
+    Instrucao:
+      type: object
+      properties:
+        idInstrucao:
+          type: integer
+          format: int64
+        descQuantidadeTempoInstrucao:
+          type: string
+        descInstrucao:
+          type: string
+        descJustificativaTeste:
+          type: string
+        atividade:
+          "$ref": "#/components/schemas/Atividade"
+        procedimento:
+          "$ref": "#/components/schemas/Procedimento"
+        incidenteProcedimento:
+          "$ref": "#/components/schemas/IncidenteProcedimento"
+        instrucaoTesteAnexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/InstrucaoTesteAnexo"
+    InstrucaoRequest:
+      type: object
+      properties:
+        idInstrucao:
+          type: integer
+          format: int64
+        descQuantidadeTempoInstrucao:
+          type: string
+        descInstrucao:
+          type: string
+        idAtividade:
+          type: integer
+          format: int64
+        idProcedimento:
+          type: integer
+          format: int64
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        idUsuarioAtualizacao:
+          type: string
+        descJustificativa:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/InstrucaoTesteAnexoRequest"
+    InstrucaoTesteAnexo:
+      type: object
+      properties:
+        idInstrucaoTesteAnexo:
+          type: integer
+          format: int64
+        instrucao:
+          "$ref": "#/components/schemas/Instrucao"
+        idDocumento:
+          type: integer
+          format: int64
+        nomeArquivoAnexo:
+          type: string
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioAtualizacao:
+          type: string
+    InstrucaoTesteAnexoRequest:
+      type: object
+      properties:
+        idInstrucaoTesteAnexo:
+          type: integer
+          format: int64
+        instrucao:
+          "$ref": "#/components/schemas/Instrucao"
+        idDocumento:
+          type: integer
+          format: int64
+        nomeArquivoAnexo:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+        anexo:
+          "$ref": "#/components/schemas/InstrucaoTesteAnexo"
+    PerfilContato:
+      type: object
+      properties:
+        idPerfilContato:
+          type: integer
+          format: int64
+        nomePerfilContato:
+          type: string
+    Procedimento:
+      type: object
+      properties:
+        idProcedimento:
+          type: integer
+          format: int64
+        idTipoProcedimento:
+          type: integer
+          format: int64
+        plano:
+          "$ref": "#/components/schemas/PlanoGcn"
+    InstrucaoResponse:
+      type: object
+      properties:
+        idInstrucao:
+          type: integer
+          format: int64
+        descQuantidadeTempoInstrucao:
+          type: string
+        descInstrucao:
+          type: string
+        idAtividade:
+          type: integer
+          format: int64
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        idProcedimento:
+          type: integer
+          format: int64
+        descJustificativa:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/InstrucaoTesteAnexoResponse"
+    InstrucaoTesteAnexoResponse:
+      type: object
+      properties:
+        idDocumento:
+          type: integer
+          format: int64
+        nomeArquivoAnexo:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+        dataAnexo:
+          type: string
+          format: date-time
+        idInstrucaoTesteAnexo:
+          type: integer
+          format: int64
+    IncidenteRequest:
+      required:
+      - bolAtivo
+      - bolVisivelCentrais
+      - nome
+      - tipoProdutoServicoId
+      type: object
+      properties:
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolVisivelCentrais:
+          type: boolean
+        tipoPlanoId:
+          type: integer
+          format: int64
+        tipoProdutoServicoId:
+          type: integer
+          format: int64
+    AtividadeResponse:
+      type: object
+      properties:
+        idAtividade:
+          type: integer
+          format: int64
+        nomeAtividade:
+          type: string
+        incidenteProcedimento:
+          "$ref": "#/components/schemas/IncidenteProcedimento"
+        listaInstrucao:
+          type: array
+          items:
+            "$ref": "#/components/schemas/InstrucaoResponse"
+        grupo:
+          "$ref": "#/components/schemas/GrupoFuncionalResponse"
+    ContatoPlanoResponse:
+      type: object
+      properties:
+        idContatoPlano:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        perfilContato:
+          "$ref": "#/components/schemas/PerfilContatoResponse"
+        telefone:
+          type: string
+        celular:
+          type: string
+        telefoneOpcional:
+          type: string
+        descCargo:
+          type: string
+        descEmailContato:
+          type: string
+        descContato:
+          type: string
+    GrupoFuncionalResponse:
+      type: object
+      properties:
+        idGrupoFuncional:
+          type: integer
+          format: int64
+        nomeGrupoFuncional:
+          type: string
+        contatos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/ContatoPlanoResponse"
+    IncidenteResponse:
+      type: object
+      properties:
+        idIncidente:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolVisivelCentrais:
+          type: boolean
+        tipoPlano:
+          "$ref": "#/components/schemas/TipoPlanoResponse"
+        tipoProdutoServico:
+          "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+        listaAtividade:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AtividadeResponse"
+        contato:
+          "$ref": "#/components/schemas/ContatoPlanoResponse"
+        listaInstrucao:
+          type: array
+          items:
+            "$ref": "#/components/schemas/InstrucaoResponse"
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        numeroOrdem:
+          type: integer
+          format: int32
+    PerfilContatoResponse:
+      type: object
+      properties:
+        idPerfilContato:
+          type: integer
+          format: int64
+        nomePerfilContato:
+          type: string
+    TipoProdutoServicoResponse:
+      type: object
+      properties:
+        idTipoProdutoServico:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolRecursoObrigatorioGCN:
+          type: boolean
+    IncidenteDescontinuidadeAnexoRequest:
+      type: object
+      properties:
+        idDocumento:
+          type: integer
+          format: int64
+        nome:
+          type: string
+    IncidenteDescontinuidadeRequest:
+      type: object
+      properties:
+        idIncidente:
+          type: integer
+          format: int64
+        idInstituicaoResponsavel:
+          type: integer
+          format: int64
+        idInstituicao:
+          type: integer
+          format: int64
+        pa:
+          type: integer
+          format: int64
+        planos:
+          type: array
+          items:
+            type: integer
+            format: int64
+        produtosServicos:
+          type: array
+          items:
+            type: integer
+            format: int64
+        idSistema:
+          type: integer
+          format: int64
+        idTipoOrigem:
+          type: integer
+          format: int64
+        categorias:
+          type: array
+          items:
+            type: integer
+            format: int64
+        dataHoraInicioIncidente:
+          type: string
+          format: date-time
+        dataHoraFimIncidente:
+          type: string
+          format: date-time
+        dataHoraCriacaoRevisaoPlano:
+          type: string
+          format: date-time
+        descricao:
+          type: string
+        acaoAdotada:
+          type: string
+        bolAcaoNecessaria:
+          type: boolean
+        acaoNecessaria:
+          type: string
+        bolAcionamentoContinuidade:
+          type: boolean
+        acionamentoContinuidade:
+          type: string
+        bolAcionamentoEficaz:
+          type: boolean
+        acionamentoEficaz:
+          type: string
+        inativacaoIncidente:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/IncidenteDescontinuidadeAnexoRequest"
+    IncidenteDescontinuidadeAnexoResponse:
+      type: object
+      properties:
+        idIncidenteDescontinuidadeAnexo:
+          type: integer
+          format: int64
+        idDocumento:
+          type: integer
+          format: int64
+        nomeArquivoAnexo:
+          type: string
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+    IncidenteDescontinuidadeInstituicaoResponse:
+      type: object
+      properties:
+        idIncidenteDescontinuidadeInstituicao:
+          type: integer
+          format: int64
+        idInstituicaoResponsavel:
+          type: integer
+          format: int64
+        idInstituicao:
+          type: integer
+          format: int64
+        idUnidadeInst:
+          type: integer
+          format: int64
+    IncidenteDescontinuidadeResponse:
+      type: object
+      properties:
+        idIncidenteDescontinuidade:
+          type: integer
+          format: int64
+        instituicao:
+          "$ref": "#/components/schemas/IncidenteDescontinuidadeInstituicaoResponse"
+        produtosServicos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+        planos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/PlanoResponse"
+        incidente:
+          "$ref": "#/components/schemas/IncidenteResponse"
+        sistema:
+          "$ref": "#/components/schemas/SistemaResponse"
+        tipoOrigem:
+          "$ref": "#/components/schemas/TipoOrigemIncidenteResponse"
+        categorias:
+          type: array
+          items:
+            "$ref": "#/components/schemas/TipoCategoriaIncidenteResponse"
+        dataHoraInicioIncidente:
+          type: string
+          format: date-time
+        dataHoraFimIncidente:
+          type: string
+          format: date-time
+        dataHoraCriacaoRevisaoPlano:
+          type: string
+          format: date-time
+        descricao:
+          type: string
+        acaoAdotada:
+          type: string
+        bolAcaoNecessaria:
+          type: boolean
+        acaoNecessaria:
+          type: string
+        bolAcionamentoContinuidade:
+          type: boolean
+        acionamentoContinuidade:
+          type: string
+        bolAcionamentoEficaz:
+          type: boolean
+        acionamentoEficaz:
+          type: string
+        dataHoraConclusaoCadastro:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioAtualizacao:
+          type: string
+        bolAtivo:
+          type: boolean
+        inativacaoIncidente:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/IncidenteDescontinuidadeAnexoResponse"
+    IncidenteProdutoServicoResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+    IncidenteTpResponse:
+      type: object
+      properties:
+        idIncidente:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolVisivelCentrais:
+          type: boolean
+        tipoProdutoServico:
+          "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+    PlanoInstituicaoResponseDTO:
+      type: object
+      properties:
+        central:
+          type: integer
+          format: int64
+        singular:
+          type: integer
+          format: int64
+        unidades:
+          type: array
+          items:
+            "$ref": "#/components/schemas/UnidadePlanoResponse"
+        empresas:
+          type: array
+          items:
+            type: integer
+            format: int64
+    PlanoProdutoServicoResponse:
+      type: object
+      properties:
+        idPlanoProdutoServico:
+          type: integer
+          format: int64
+        idProdutoServico:
+          type: integer
+          format: int64
+        nomeArea:
+          type: string
+        nomeProduto:
+          type: string
+        idUsuarioCTA:
+          type: string
+        incidentes:
+          type: array
+          items:
+            "$ref": "#/components/schemas/IncidenteProdutoServicoResponse"
+    PlanoResponse:
+      type: object
+      properties:
+        idPlanoGcn:
+          type: integer
+          format: int64
+        tipoplano:
+          "$ref": "#/components/schemas/TpListaIncidenteResponse"
+        nomePlano:
+          type: string
+        situacaoPlano:
+          "$ref": "#/components/schemas/SituacaoPlanoResponse"
+        grupoFuncional:
+          type: array
+          items:
+            "$ref": "#/components/schemas/GrupoFuncionalResponse"
+        planoInstituicaoResponseDTO:
+          "$ref": "#/components/schemas/PlanoInstituicaoResponseDTO"
+        planoProdutoServico:
+          type: array
+          items:
+            "$ref": "#/components/schemas/PlanoProdutoServicoResponse"
+        bolCcs:
+          type: boolean
+        descObjetivoPlano:
+          type: string
+        descBaseNormativa:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolResponsabilidadeUnidade:
+          type: boolean
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+        nomeCargoResponsavel:
+          type: string
+        descVersaoPlano:
+          type: string
+    SituacaoPlanoResponse:
+      type: object
+      properties:
+        idSituacaoPlanoGcn:
+          type: integer
+          format: int64
+        bolAtivo:
+          type: boolean
+        nomeSituacaoPlanoGcn:
+          type: string
+    TipoCategoriaIncidenteResponse:
+      type: object
+      properties:
+        idCategoriaIncidente:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+        idTipoOrigem:
+          type: integer
+          format: int64
+    TipoOrigemIncidenteResponse:
+      type: object
+      properties:
+        idTipoOrigemIncidente:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    TpListaIncidenteResponse:
+      type: object
+      properties:
+        idTipoPlano:
+          type: integer
+          format: int64
+        sigla:
+          type: string
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        incidente:
+          type: array
+          items:
+            "$ref": "#/components/schemas/IncidenteTpResponse"
+    UnidadePlanoResponse:
+      type: object
+      properties:
+        idUnidadePlano:
+          type: integer
+          format: int64
+        idUnidade:
+          type: integer
+          format: int64
+        idPlanoInstituicao:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+    FornecedorRequest:
+      type: object
+      properties:
+        idFornecedorGcn:
+          type: integer
+          format: int64
+        idTipoFornecedor:
+          type: integer
+          format: int64
+        idPlanoGcn:
+          type: integer
+          format: int64
+        idPessoaCapes:
+          type: integer
+          format: int64
+        descEmail:
+          type: string
+        nomeContato:
+          type: string
+        numCelular:
+          type: string
+        numTelefone:
+          type: string
+        descObservacao:
+          type: string
+        produtoServico:
+          type: integer
+          format: int64
+        idUsuarioAtualizacao:
+          type: string
+        descContatoFornecedor:
+          type: string
+    FornecedorResponse:
+      type: object
+      properties:
+        idFornecedorGcn:
+          type: integer
+          format: int64
+        numFornecedor:
+          type: integer
+          format: int32
+        idPlanoGcn:
+          type: integer
+          format: int64
+        tipoFornecedor:
+          "$ref": "#/components/schemas/TipoFornecedorResponse"
+        idPessoaCapes:
+          type: integer
+          format: int64
+        nomeEmpresa:
+          type: string
+        descEmail:
+          type: string
+        nomeContato:
+          type: string
+        numCelular:
+          type: string
+        numTelefone:
+          type: string
+        descObservacao:
+          type: string
+        produtoServico:
+          type: string
+        descContatoFornecedor:
+          type: string
+    ContatoPlanoRequest:
+      type: object
+      properties:
+        idContatoPlano:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        idPerfil:
+          type: integer
+          format: int64
+        telefone:
+          type: string
+        nomeContato:
+          type: string
+        celular:
+          type: string
+        telefoneOpcional:
+          type: string
+        email:
+          type: string
+        descArea:
+          type: string
+        descCargo:
+          type: string
+        descPerfil:
+          type: string
+        idGrupoFuncional:
+          type: integer
+          format: int64
+        idUsuarioAtualizacao:
+          type: string
+        descContato:
+          type: string
+    AtividadeRequest:
+      type: object
+      properties:
+        idAtividade:
+          type: integer
+          format: int64
+        nomeAtividade:
+          type: string
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        idGrupoFuncional:
+          type: integer
+          format: int64
+        idUsuarioAtualizacao:
+          type: string
+    AbaInstituicaoTesteCampoCargo:
+      type: object
+      properties:
+        nomeCargoResponsavel:
+          type: string
+        operacao:
+          type: string
+    AbaInstituicaoTesteCampoEmpresa:
+      type: object
+      properties:
+        idEmpresa:
+          type: integer
+          format: int64
+        operacao:
+          type: string
+    AbaInstituicaoTesteCampoUnidade:
+      type: object
+      properties:
+        idUnidadePlano:
+          type: integer
+          format: int64
+        idUnidade:
+          type: integer
+          format: int64
+        nomeUnidade:
+          type: string
+        idPlanoInstituicao:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        operacao:
+          type: string
+    AbaInstituicaoTesteRequest:
+      type: object
+      properties:
+        idPlanoGcn:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        cargo:
+          "$ref": "#/components/schemas/AbaInstituicaoTesteCampoCargo"
+        unidades:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AbaInstituicaoTesteCampoUnidade"
+        empresas:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AbaInstituicaoTesteCampoEmpresa"
+    InicioTesteRequest:
+      type: object
+      properties:
+        idPlanogcn:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+    AbaDadosGeraisTesteCampoBase:
+      type: object
+      properties:
+        descBaseNormativa:
+          type: string
+        operacao:
+          type: string
+    AbaDadosGeraisTesteCampoObjetivo:
+      type: object
+      properties:
+        descObjetivoPlano:
+          type: string
+        operacao:
+          type: string
+    AbaDadosGeraisTesteCampoProdutoServico:
+      type: object
+      properties:
+        idPlanoProdutoServico:
+          type: integer
+          format: int64
+        idProdutoServico:
+          type: integer
+          format: int64
+        nomeArea:
+          type: string
+        nomeProduto:
+          type: string
+        idUsuarioCTA:
+          type: string
+        operacao:
+          type: string
+    AbaDadosGeraisTesteRequest:
+      type: object
+      properties:
+        idPlanoGcn:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        objetivo:
+          "$ref": "#/components/schemas/AbaDadosGeraisTesteCampoObjetivo"
+        base:
+          "$ref": "#/components/schemas/AbaDadosGeraisTesteCampoBase"
+        listaProdutoServico:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AbaDadosGeraisTesteCampoProdutoServico"
+    ConclusaoTesteRequest:
+      type: object
+      properties:
+        idPlano:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        justificativa:
+          type: string
+    EmailRequest:
+      type: object
+      properties:
+        assunto:
+          type: string
+        tipoTeste:
+          type: string
+        nomePlano:
+          type: string
+        idPlanoGcn:
+          type: string
+        idContato:
+          type: string
+        dataInicial:
+          type: string
+          format: date
+        url:
+          type: string
+        emailUsuario:
+          type: string
+        nomeUsuario:
+          type: string
+        dataFinal:
+          type: string
+    MarcarEmailTesteRequest:
+      type: object
+      properties:
+        idPlanoGcn:
+          type: string
+        idContato:
+          type: array
+          items:
+            type: string
+        dataHora:
+          type: string
+    ContatoGerenciarRequest:
+      type: object
+      properties:
+        idContatoPlano:
+          type: integer
+          format: int64
+        abas:
+          type: array
+          items:
+            type: integer
+            format: int64
+    GerenciarRequest:
+      type: object
+      properties:
+        idContatoPlanoAbaPlano:
+          type: integer
+          format: int64
+        idPlano:
+          type: integer
+          format: int64
+        idTipoTeste:
+          type: integer
+          format: int64
+        listaContato:
+          type: array
+          items:
+            "$ref": "#/components/schemas/ContatoGerenciarRequest"
+    AbaPlano:
+      type: object
+      properties:
+        idAbaPlano:
+          type: integer
+          format: int64
+        nome:
+          type: string
+    ContatoPlanoAbaPlano:
+      type: object
+      properties:
+        idContatoPlanoAbaPlano:
+          type: integer
+          format: int64
+        abaPlano:
+          "$ref": "#/components/schemas/AbaPlano"
+        contatoPlano:
+          "$ref": "#/components/schemas/ContatoPlano"
+        plano:
+          "$ref": "#/components/schemas/PlanoGcn"
+        bolTesteEncerrado:
+          type: boolean
+    AprovacaoRequest:
+      type: object
+      properties:
+        idPlano:
+          type: integer
+          format: int64
+        listaAprovador:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AprovadorRequest"
+        idInstituicaoResponsavel:
+          type: integer
+          format: int32
+        idInstituicao:
+          type: integer
+          format: int32
+        idUnidadePlano:
+          type: integer
+          format: int32
+        idUsuarioCTA:
+          type: string
+        tipoDocumento:
+          type: integer
+          format: int32
+        minuta:
+          type: boolean
+    AprovadorRequest:
+      type: object
+      properties:
+        idUsuarioCTA:
+          type: string
+        idGrupoFuncional:
+          type: integer
+          format: int64
+    AprovacaoManual:
+      type: object
+      properties:
+        idAprovacaoManual:
+          type: integer
+          format: int64
+        idPlanoGcn:
+          type: integer
+          format: int64
+        bolAprovadoManual:
+          type: boolean
+        descAprovacaoManual:
+          type: string
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioAtualizacao:
+          type: string
+        anexos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AprovacaoManualAnexo"
+    AprovacaoManualAnexo:
+      type: object
+      properties:
+        idAprovacaoManualAnexo:
+          type: integer
+          format: int64
+        aprovacaoManual:
+          "$ref": "#/components/schemas/AprovacaoManual"
+        idDocumento:
+          type: integer
+          format: int64
+        nomeArquivoAnexo:
+          type: string
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioAtualizacao:
+          type: string
+    TipoTeste:
+      type: object
+      properties:
+        idTipoTeste:
+          type: integer
+          format: int64
+        nome:
+          type: string
+    TipoProcedimentoResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+        titulo:
+          type: string
+        nomeAbaPlano:
+          type: string
+    PageTipoPlano:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+        totalElements:
+          type: integer
+          format: int64
+        size:
+          type: integer
+          format: int32
+        content:
+          type: array
+          items:
+            "$ref": "#/components/schemas/TipoPlano"
+        number:
+          type: integer
+          format: int32
+        sort:
+          "$ref": "#/components/schemas/SortObject"
+        first:
+          type: boolean
+        last:
+          type: boolean
+        numberOfElements:
+          type: integer
+          format: int32
+        pageable:
+          "$ref": "#/components/schemas/PageableObject"
+        empty:
+          type: boolean
+    PageableObject:
+      type: object
+      properties:
+        offset:
+          type: integer
+          format: int64
+        sort:
+          "$ref": "#/components/schemas/SortObject"
+        paged:
+          type: boolean
+        unpaged:
+          type: boolean
+        pageSize:
+          type: integer
+          format: int32
+        pageNumber:
+          type: integer
+          format: int32
+    SortObject:
+      type: object
+      properties:
+        empty:
+          type: boolean
+        unsorted:
+          type: boolean
+        sorted:
+          type: boolean
+    TipoDocumentoRelatorioResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+    PageSistema:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+        totalElements:
+          type: integer
+          format: int64
+        size:
+          type: integer
+          format: int32
+        content:
+          type: array
+          items:
+            "$ref": "#/components/schemas/Sistema"
+        number:
+          type: integer
+          format: int32
+        sort:
+          "$ref": "#/components/schemas/SortObject"
+        first:
+          type: boolean
+        last:
+          type: boolean
+        numberOfElements:
+          type: integer
+          format: int32
+        pageable:
+          "$ref": "#/components/schemas/PageableObject"
+        empty:
+          type: boolean
+    Sistema:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        bolAtivo:
+          type: boolean
+        bolVisivelTodasInst:
+          type: boolean
+        dataHoraInclusao:
+          type: string
+          format: date-time
+        dataHoraAtualizacao:
+          type: string
+          format: date-time
+        idUsuarioInclusao:
+          type: string
+        idUsuarioAtualizacao:
+          type: string
+    InstituicaoUnidadeDTO:
+      type: object
+      properties:
+        instituicao:
+          "$ref": "#/components/schemas/SingularDTO"
+        nomeUnidade:
+          type: string
+        siglaUnidade:
+          type: string
+        idUnidadeInstituicao:
+          type: string
+    InstituicaoUnidadeResponse:
+      type: object
+      properties:
+        resultado:
+          "$ref": "#/components/schemas/InstituicaoUnidadeDTO"
+    SingularDTO:
+      type: object
+      properties:
+        nomeInstituicao:
+          type: string
+        siglaInstituicao:
+          type: string
+        descricaoInstituicao:
+          type: string
+        numeroInstituicao:
+          type: string
+    RelatorioPlanoAnaliticoFilter:
+      type: object
+      properties:
+        central:
+          type: array
+          items:
+            type: integer
+            format: int64
+        singular:
+          type: array
+          items:
+            type: integer
+            format: int64
+        unidade:
+          type: array
+          items:
+            type: integer
+            format: int64
+        bolCcs:
+          type: boolean
+        tipoPlano:
+          type: string
+        usuarioCta:
+          type: string
+        produtoServico:
+          type: array
+          items:
+            type: integer
+            format: int64
+        situacao:
+          type: array
+          items:
+            type: integer
+            format: int64
+        anoExercicio:
+          type: string
+    CentralResponse:
+      type: object
+      properties:
+        resultado:
+          "$ref": "#/components/schemas/IntituicaoCentralDTO"
+    IntituicaoCentralDTO:
+      type: object
+      properties:
+        idInstituicao:
+          type: string
+        nomeInstituicao:
+          type: string
+        descricaoInstituicao:
+          type: string
+        siglaInstituicao:
+          type: string
+        numero:
+          type: string
+    RelatorioDocumentoPlanoResponse:
+      type: object
+      properties:
+        idPlano:
+          type: string
+        nomeCentral:
+          type: string
+        nomeSingular:
+          type: string
+        nomePontoAtendimento:
+          type: string
+        siglaTipoPlano:
+          type: string
+        nomeProdutoServico:
+          type: string
+        criadoEm:
+          type: string
+        aprovadoEm:
+          type: string
+    RelatorioDocumentoIncidenteDescontinuidadeResponse:
+      type: object
+      properties:
+        idIncidenteDescontinuidade:
+          type: string
+        nomeCentral:
+          type: string
+        nomeSingular:
+          type: string
+        nomePontoAtendimento:
+          type: string
+        siglaTipoPlano:
+          type: string
+        nomeProdutoServico:
+          type: string
+        concluidoEm:
+          type: string
+    RecursoSistemaResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nomeSistema:
+          type: string
+        objetivoSistema:
+          type: string
+    RecursoInfraestruturaResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+        nomeLocal:
+          type: string
+        descricaoLocal:
+          type: string
+        quantidade:
+          type: integer
+          format: int32
+    RecursoListagemHumanosResponse:
+      type: object
+      properties:
+        idRecurso:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+        quantidade:
+          type: integer
+          format: int32
+    RecursoHumanoResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        descricao:
+          type: string
+        quantidade:
+          type: integer
+          format: int32
+    RecursoAnexoResponse:
+      type: object
+      properties:
+        idRecursoInfraestruturaAnexo:
+          type: integer
+          format: int64
+        idDocumento:
+          type: integer
+          format: int64
+        nomeRecursoAnexo:
+          type: string
+        dataAnexo:
+          type: string
+          format: date-time
+    ProcedimentoResponse:
+      type: object
+      properties:
+        idProcedimento:
+          type: integer
+          format: int64
+        idPlano:
+          type: integer
+          format: int64
+        tipoProcedimento:
+          "$ref": "#/components/schemas/TipoProcedimentoResponse"
+        contato:
+          "$ref": "#/components/schemas/ContatoPlanoResponse"
+        listIncidente:
+          type: array
+          items:
+            "$ref": "#/components/schemas/IncidenteResponse"
+        listaInstrucao:
+          type: array
+          items:
+            "$ref": "#/components/schemas/InstrucaoResponse"
+        idIncidenteProcedimento:
+          type: integer
+          format: int64
+        prd:
+          type: boolean
+    PlanoPendenciasValidacaoResponse:
+      type: object
+      properties:
+        description:
+          type: string
+        link:
+          type: string
+    PagePlanoGcn:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+        totalElements:
+          type: integer
+          format: int64
+        size:
+          type: integer
+          format: int32
+        content:
+          type: array
+          items:
+            "$ref": "#/components/schemas/PlanoGcn"
+        number:
+          type: integer
+          format: int32
+        sort:
+          "$ref": "#/components/schemas/SortObject"
+        first:
+          type: boolean
+        last:
+          type: boolean
+        numberOfElements:
+          type: integer
+          format: int32
+        pageable:
+          "$ref": "#/components/schemas/PageableObject"
+        empty:
+          type: boolean
+    DetalhesTesteResponse:
+      type: object
+      properties:
+        dataHora:
+          type: string
+          format: date-time
+        tipoTeste:
+          type: string
+        permissoes:
+          type: array
+          items:
+            type: integer
+            format: int32
+    PendenciaResponse:
+      type: object
+      properties:
+        description:
+          type: string
+        link:
+          type: string
+    IncidenteListagemResponse:
+      type: object
+      properties:
+        idIncidente:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        tipoProdutoServico:
+          type: string
+        tipoPlanoSigla:
+          type: string
+        bolVisivelCentrais:
+          type: boolean
+        bolAtivo:
+          type: boolean
+    PageIncidenteListagemResponse:
+      type: object
+      properties:
+        totalPages:
+          type: integer
+          format: int32
+        totalElements:
+          type: integer
+          format: int64
+        size:
+          type: integer
+          format: int32
+        content:
+          type: array
+          items:
+            "$ref": "#/components/schemas/IncidenteListagemResponse"
+        number:
+          type: integer
+          format: int32
+        sort:
+          "$ref": "#/components/schemas/SortObject"
+        first:
+          type: boolean
+        last:
+          type: boolean
+        numberOfElements:
+          type: integer
+          format: int32
+        pageable:
+          "$ref": "#/components/schemas/PageableObject"
+        empty:
+          type: boolean
+    IncidenteDescontinuidadeListResponse:
+      type: object
+      properties:
+        idIncidenteDescontinuidade:
+          type: integer
+          format: int64
+        dataHoraInicioIncidente:
+          type: string
+          format: date-time
+        dataHoraFimIncidente:
+          type: string
+          format: date-time
+        dataHoraConclusaoCadastro:
+          type: string
+          format: date-time
+        instituicao:
+          "$ref": "#/components/schemas/IncidenteDescontinuidadeInstituicaoResponse"
+        produtosServicos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/TipoProdutoServicoResponse"
+        incidente:
+          "$ref": "#/components/schemas/IncidenteResponse"
+    AbaTesteResponse:
+      type: object
+      properties:
+        idAbaPlano:
+          type: integer
+          format: int64
+        nomeAbaPlano:
+          type: string
+    ContatoPlanoTesteResponse:
+      type: object
+      properties:
+        idContatoPlano:
+          type: integer
+          format: int64
+        idUsuarioCTA:
+          type: string
+        descCargo:
+          type: string
+        enviadoEm:
+          type: string
+        abas:
+          type: array
+          items:
+            "$ref": "#/components/schemas/AbaTesteResponse"
+    GerenciarResponse:
+      type: object
+      properties:
+        idContatoPlanoAbaPlano:
+          type: integer
+          format: int64
+        idPlano:
+          type: integer
+          format: int64
+        listaContato:
+          type: array
+          items:
+            "$ref": "#/components/schemas/ContatoGerenciarRequest"
+    FornecedorResumidoResponse:
+      type: object
+      properties:
+        idFornecedorGcn:
+          type: integer
+          format: int64
+        tipoFornecedor:
+          type: string
+        idPessoaCapes:
+          type: integer
+          format: int64
+        descEmail:
+          type: string
+        nomeContato:
+          type: string
+        numCelular:
+          type: string
+        numTelefoneOpcional:
+          type: string
+        observacao:
+          type: string
+        descContatoFornecedor:
+          type: string
+    TipoProdutoServicoFornecedorResponse:
+      type: object
+      properties:
+        idTipoProdutoServico:
+          type: integer
+          format: int64
+        idPlanoProdutoServico:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        fornecedores:
+          type: array
+          items:
+            "$ref": "#/components/schemas/FornecedorResumidoResponse"
+    AprovacaoResponse:
+      type: object
+      properties:
+        idAprovacaoDocumento:
+          type: integer
+          format: int64
+        tipoDocumentoAprovacao:
+          type: integer
+          format: int32
+        dataHoraEnvioAprovacao:
+          type: string
+          format: date-time
+        dataHoraAprovacao:
+          type: string
+          format: date-time
+        idContatoPlano:
+          type: integer
+          format: int64
+        perfilContato:
+          type: string
+        idDocumento:
+          type: integer
+        idPlano:
+          type: integer
+          format: int64
+    AnexoPlanoResponse:
+      type: object
+      properties:
+        tipoAnexo:
+          type: string
+          enum:
+          - PLANO
+          - TESTE
+          - APROVACAO_PLANO
+        documentos:
+          type: array
+          items:
+            "$ref": "#/components/schemas/DocumentosAnexoPlanoResponse"
+    DocumentosAnexoPlanoResponse:
+      type: object
+      properties:
+        idDocumento:
+          type: integer
+          format: int64
+        nomeDocumento:
+          type: string
+        dataAnexo:
+          type: string
+          format: date-time
+        idAprovacaoAnexo:
+          type: integer
+          format: int64
