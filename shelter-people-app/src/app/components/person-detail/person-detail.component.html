@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-title>Registration of people</mat-card-title>
+
+  <mat-card-content class="person-card">
+    <form [formGroup]="applyForm" (ngSubmit)="submitApplication()">
+      <p class="person-card">
+        <mat-form-field style="width: 180px">
+          <mat-label>Register</mat-label>
+          <input matInput disabled value="{{ person?.id }}">
+        </mat-form-field>
+      </p>
+      <p class="person-card">
+        <mat-form-field style="width: 480px">
+          <input type="text" matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 380px">
+          <input type="text" matInput placeholder="Phone" formControlName="phone" placeholder="Ex. (00) 0 0000-0000" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 380px">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                placeholder="Ex. pat@example.com" formControlName="email">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+            <mat-error>Please enter a valid email address</mat-error>
+          }
+          @if (emailFormControl.hasError('required')) {
+            <mat-error>Email is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Gender</mat-label>
+          <mat-select name="gender" formControlName="gender">
+            @for (gender of genders; track gender) {
+              <mat-option [value]="gender.value">{{ gender.viewValue }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </p>
+
+      <div class="button">
+        <a class="botao" [routerLink]="['/']">Back</a>
+        <button type="submit" class="primary">Apply now</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

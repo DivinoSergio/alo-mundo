@@ -1,0 +1,12 @@
+th[mat-header-cell] {
+  background-color: #5b648b;
+  color: #fff;
+}
+
+.demo-table {
+  width: 100%;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

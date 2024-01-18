@@ -1,0 +1,54 @@
+<main>
+  <mat-toolbar class="stickyBar" color="primary">
+    <span class="fill-remaining-space">
+      <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger"
+        (mouseover)="menuTrigger.openMenu()">
+        <mat-icon>ac_unit</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <span (mouseleave)="menuTrigger.closeMenu()">
+          <button mat-menu-item [routerLink]="['/']">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/add']">
+            <mat-icon>person_add</mat-icon>
+            <span>Registration of people.</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/login']">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </span>
+      </mat-menu>
+    </span>
+    <span class="fill-remaining-space">People Management.</span>
+  </mat-toolbar>
+  <!--
+
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <a [routerLink]="['/']">
+        <header class="brand-name">
+          <img class="brand-logo" src="/assets/logo-peq.png" alt="logo" aria-hidden="true" height="59" width="50">
+        </header>
+      </a>
+
+      <span class="menu-spacer"></span>
+
+      <div>
+        <a mat-button [routerLink]="['/add']">New person</a>
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #   menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+-->
+
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</main>
